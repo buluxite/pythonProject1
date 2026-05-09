@@ -110,22 +110,110 @@ print("总价为%.2f" %a)
 # else:
 #     print("这个数是0")
 # 根据输入三条边是边长，判断是等边三角线，等腰三角形，还是直角三角线
-a=int(input("输入第一条边的边长"))
-b=int(input("输入第二条边的边长"))
-c=int(input("输入第三条边的边长"))
-if a+b>c and a+c>b and b+c>a:#任意两条边要大于第三条边（不能用or)
-    print("能构成三角形")
-    if a==b==c:
-        print(f"{a},{b},{c}组成的是等边三角形")
-    elif a==b or a==c or b==c:
-        print(f"{a},{b},{c}组成的是等腰三角形")
-    elif a*a==b*b+c*c or b*b==a*a+c*c or c*c==b*b+a*a :
-        print(f"{a},{b},{c}组成的是直角三角形")
-    else:
-        print(f"{a},{b},{c}组成的是普通三角形")
+# a=int(input("输入第一条边的边长"))
+# b=int(input("输入第二条边的边长"))
+# c=int(input("输入第三条边的边长"))
+# if a+b>c and a+c>b and b+c>a:#任意两条边要大于第三条边（不能用or)
+#     print("能构成三角形")
+#     if a==b==c:
+#         print(f"{a},{b},{c}组成的是等边三角形")
+#     elif a==b or a==c or b==c:
+#         print(f"{a},{b},{c}组成的是等腰三角形")
+#     elif a*a==b*b+c*c or b*b==a*a+c*c or c*c==b*b+a*a :
+#         print(f"{a},{b},{c}组成的是直角三角形")
+#     else:
+#         print(f"{a},{b},{c}组成的是普通三角形")
+#
+# else:
+#     print(f"{a},{b},{c}不能组成三角形")
+# app=input("请输入你要打开的app")
+# #match...case
+# match app:
+#     case "github":
+#         print("推送代码")
+#     case "bilibili":
+#         print("追番")
+#     case "淘宝":
+#         print("买谷子")
+#     case "原神":
+#         print("打游戏")
+#     case "抖音" :
+#         print("续火花")
+#     case _:
+#         print("输入错误")
+# 停止键是？(default?)其他怎么算？（else==case_)
+#实现一个计算机，进行加减乘除运算
+# a=int(input("请输入第一个数字"))
+# b=int(input("请输入第二个数字"))
+# c=input("请输入加减乘除的运算符")
+# match c:
+#     case "+":
+#         print(f"{a}+{b}的结果是{a+b}")
+#     case "-":
+#         print(f"{a}-{b}的结果是{a-b}")
+#     case "*":
+#         print(f"{a}*{b}的结果是{a*b}")
+#     case "/" if b!=0:   # case后面加条件判断
+#         print(f"{a}/{b}的结果是{a/b}")
+#     case _:
+#         print("对不起，没找到匹配的运算符")
+#while循环
+# i=0
+# while i<10:
+#     i+=1
+#     print("对不起啊，老齐，笨鸟没做到诸般困厄已前尘")
+# else:
+#     print(f"等一等，第{i+1}次，来日青与清溪长")
+# 计算1-100之间，所有偶数的累加之和
+# i=1
+# sum=0
+# while i<=100:
+#     i+=1
+#     if i%2==0:
+#         sum+=i
+#         print(f"当i等于{i},sum={sum}")
+# a="没钱买周边了，(悲)"
+# n=0
+# #for循环
+#
+# for i in a:
+#     n+=1
+#     print(f"第{n}个是{i}")
+# else:
+#      print("循环结束")
+#计算1-100之间，所有奇数之和.for(?,1到100怎么表示？)
+#range语句，range(2,8)
+#获取的数据是从2到7 注意不包含end,即8
+# sum=0
+# for i in range(1,100):
+#     if i%2!=0:
+#         sum+=i
+#         print(f"当i等于{i},sum={sum}")
+# else:
+#     print("循环结束")  sum==2500
+#计算100到500之间，所有三倍数的数字之和，for.
+# sum=0
+# for i in range(100,500):
+#     if i%3==0:
+#         sum+=i
+# print(f"当i等于{i},sum={sum}")#  sum=39900
+# 打印一个长度为m,宽度为n的长方形，嵌套循环，两个循环
+m=int(input("请输入长方形的长度"))
+n=int(input("请输入长方形的宽度"))
+for i in range(1,m+1):
+    print("*")# print默认换行，end=""取消换行
+    for k in range (1,n+1):
+        print("*",end="")
 
-else:
-    print(f"{a},{b},{c}不能组成三角形")
+
+
+
+
+
+
+
+
+
 
 
 
