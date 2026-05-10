@@ -198,12 +198,130 @@ print("总价为%.2f" %a)
 #         sum+=i
 # print(f"当i等于{i},sum={sum}")#  sum=39900
 # 打印一个长度为m,宽度为n的长方形，嵌套循环，两个循环
-m=int(input("请输入长方形的长度"))
-n=int(input("请输入长方形的宽度"))
-for i in range(1,m+1):
-    print("*")# print默认换行，end=""取消换行
-    for k in range (1,n+1):
-        print("*",end="")
+# m=int(input("请输入长方形的长度"))
+# n=int(input("请输入长方形的宽度"))
+# for j in range(n):
+#     print("\n")   # 换行没想到
+#     # print默认换行，end=""取消换行
+#     for i in range (m):
+#         print("*",end=" ")
+#打印九九乘法表
+# for i in range(1,10):
+#     print()
+#
+#     for j in range(1,i+1):
+#         print(f"{j}*{i}={i*j}",end="  ")#瞎写的云云，其实我也不懂，、。。。。
+#根据输入的直角边的边长，打印等腰直角三角形
+# i=int(input("请输入直角边的边长："))
+# for i in range(i):
+#     print()
+#     for j in range(i+1):
+#         print("*",end="\t")
+#打印对应的金字塔
+"""
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+1 2 3 4 5 6
+"""
+# a=int(input("请输入数字："))
+# for i in range(a):
+#     print()
+#     for j in range(i+1):
+#         print(j+1,end=" ")
+# 依然不知道在写什么，反正调试调试就出来了
+# 打印国际象棋盘
+# for i in range(6):
+#     print()
+#     for j in range(6):
+#         if j%2==0:
+#             print("▬",end=" ")
+#         else:
+#             print("▭",end=" ")
+# 根据输入的账号密码进行登录
+# a=input("请输入您的账号")
+# b=input("请输入您的密码")
+# false = a!="admin" or b!="66688"
+# true  = a=="admin" and b=="66688"
+# #校验输入的用户名和密码不能为空
+# if a=="" or b=="":
+#     print("注意用户名和密码不能为空")
+#
+# if true:
+#     print("成功登录")
+# while false:
+#     print("账号或密码错误，请重新登录")
+#     a = input("请输入您的账号")
+#     b = input("请输入您的密码")
+#     false = a != "admin" or b != "66688"
+#     true = a == "admin" and b == "66688"
+#     if a == "" or b == "":
+#         print("注意用户名和密码不能为空")
+#
+#     if true:
+#         print("成功登录")
+# 好丑的代码，云云，也是能跑就行
+# while True:
+#
+#     s=input("睡美人会醒来在几时？：")
+#     f=input("睡美人会醒来在几分")
+#     if s=="" or f=="":
+#         print("不可以输入空字符喔~")
+#         continue
+#     if s=="18"and f=="22":
+#         print("恭喜你，公主醒啦，你就是命定的骑士")
+#         break
+#     else:
+#         print("很抱歉，公主并未苏醒")
+#         print("请再输入一遍吧")
+# 猜数字游戏，系统随机生成随机数
+# import random
+# number=random.randint(1,10)
+# while True:
+#     a=int(input("请输入一个1到10以内的随机数"))
+#     if a=="":
+#         print("禁止输入空字符")
+#         continue
+#     if a==number:
+#         print("恭喜猜对了")
+#         break
+#     elif a<number:
+#         print("猜小了")
+#
+#     elif a>number:
+#         print("猜大了")
+#列表
+a=[2,7,8,90,54,67,89,3,2,16,78,89,66,True,"python"]
+#获取列表里的数据
+# print(a[0])
+# print(a[-1])
+#修改列表里面的数据
+# a[-3]=False
+# print(a[-3])
+# print(a)
+#删除列表中的数据
+# del a[0]
+# print(a)
+#遍历列表
+for i in a:
+    print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
