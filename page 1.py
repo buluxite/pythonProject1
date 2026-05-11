@@ -293,7 +293,7 @@ print("总价为%.2f" %a)
 #     elif a>number:
 #         print("猜大了")
 #列表
-a=[2,7,8,90,54,67,89,3,2,16,78,89,66,True,"python"]
+# a=[2,4,5,6,7,8,9,3,34,56,"python",True]
 #获取列表里的数据
 # print(a[0])
 # print(a[-1])
@@ -305,8 +305,111 @@ a=[2,7,8,90,54,67,89,3,2,16,78,89,66,True,"python"]
 # del a[0]
 # print(a)
 #遍历列表
-for i in a:
-    print(i)
+# for i in a:
+#     print(i)
+# 对列表进行切片操作
+# a=[23,56,79,0,True,"fate",23.89,False]
+# b = a[0:5] # [开始索引：结束索引：步长]注意；截取后的结果不包含结束索引
+#
+# print(a[4:9])
+# # 列表的常见方法
+# a.append(79) # 在列表尾部添加元素,只能添加一个元素吗？
+# a.insert(1,666) # 在列表指定元素前面添加元素，注意是前面
+# print(a)
+#
+# a.remove(79) # 删除列表中第一个匹配到的值，remove,后面写的是列表的值
+# a.pop(3) #删除列表中指定索引的值，pop,后面括号里面写是列表的索引
+# print(f"列表a为{a},在列表a后面添加一个元素666,变成{a.append(666)}，\n在fate后面添加一个元素eva,"
+#       f"列表a变成{a.insert(5,"eva")},\n删除列表a的元素0，列表a变成{a.remove(0)
+#       },\n删除列表a的最后一个元素，列表a变成{a.pop()}")
+# {}里面的值用不了？！！！
+
+# c=[1,56,87,34,56,83,42,56,34,77,663,45]
+# c.sort() #对列表的元素进行排序，注意：列表元素一致才可以排序
+# print(c)
+# a.reverse()
+# c.reverse()
+# print(a)
+# print(c)
+# 对c中的元素进行排序,输出其中的最大值，最小值和平均值
+# sum=0
+# k=0
+# for i in c:
+#     k+=1
+#     sum+=i
+# print(sum/k)# 列表c的平均值
+# c.sort()# 从小到大排
+# print(c)
+# e=c.pop(0)
+# print(e)#最小值
+# c.reverse()
+# e=c.pop(0)
+# print(e)#最大值
+# #定义列表？怎么定义一个列表，so?,定义了一个空列表
+# a=[]
+#将用户输入十个数字输入到列表中,注意空格会报错
+# for i in range(10):
+#     n=int(input("请输入数字"))
+#     a.append(n)
+# print(a)
+# a.sort()
+# print(f"列表a的最小值{a[0]}")
+# a.reverse()
+# print(f"列表a的最大值{a[0]}")
+# print(f"列表a的平均值{sum(a)/len(a)}")# len计算列表长度
+# print(min(a))
+# print(max(a))
+# a=[19,23,54,64,875,20,109,232,123,54]
+# b=[55,80,72,35,60,123,54,23,91]
+# print(a.append(b))# 运行不了，用for循环,合并列表
+# for i in b:
+#     a.append(i)
+# print(a)
+# #去除重复元素
+# new=[]
+# for i in a:
+#
+#     if i in new:
+#         new.remove(i)
+#     new.append(i)
+# print(new)
+#简化合并列表 ,+666
+# c=a+b
+# print(c)
+# #简化合并列表3，解包
+# c=[*a,*b]
+# print(c)
+#生成1-20的平方列表
+# a=[]
+# for i in range(1,21):
+#     c=i*i
+#     a.append(c)
+# print(a)
+#提取所有偶数，并计算其平方，组成新的列表
+# list1=[]
+# for i in a:
+#     if i%2==0:
+#         l=i*i
+#         list1.append(l)
+# print(list1)
+# # 简洁的方法生成1-20的平方列表，列表推导式：[需要的数据 for i in (序列/列表）]
+# new=[i*i for i in range(1,21)]
+# print(new)
+# # #提取所有偶数，并计算其平方，组成新的列表,列表推导式2：[需要的数据 for i in (序列/列表) if 条件]
+# new2=[i**2 for i in new if i%2==0]
+# print(new2)
+#定义列表
+# a=[]
+# #定义字符串
+# b=""
+s="hello sariel"
+s1="今天半夜吃不吃冰淇凌？"
+#字符串的切片
+print(s[5:15])
+print(s1[2:10])
+
+
+
 
 
 
