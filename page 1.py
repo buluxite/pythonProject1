@@ -507,13 +507,13 @@ students = (
     ("S010", "遁天", 66, 59, 72)
 )
 # 错误 ,用for循环，不用写+=1
-a,b,c,d,e,f,g,h,i,j=students
-for k in students:
-    s, name, *num =k
-    omg=sum(num)/3
+# a,b,c,d,e,f,g,h,i,j=students
+#for k in students:
+    #s, name, *num =k
+    #omg=sum(num)/3
     #print(f"{name}的总分为{sum(num)},平均分为{omg:.1f}")
-    if omg>=90:
-        print(f"{name}，平均分为{omg:.1f}") #优秀学生
+    #if omg>=90:
+        #print(f"{name}，平均分为{omg:.1f}") #优秀学生
 
 # print("_______________________________________________________________________________________-")
 # 方式1，用下标写
@@ -535,6 +535,98 @@ for k in students:
 # print(f"数学最高分为{max(math)},最低分为{min(math)},平均分为{sum(math)/10}")
 # print(f"英语最高分为{max(english)},最低分为{min(english)},平均分为{sum(english)/10}")
 # 3. 查找成绩优秀（平均分大于90）的学生，并输出。
+# 集合，不能存储重复的元素，set 集合，自动去重
+# s1={1,6,9,5,6,75,7,74,79,89,84,8,2,4,5}
+# print(s1)  # 为什么我输出后有序
+# 定义空集合
+# s=set() # 居然不是set{}
+# s2={} # 注意这样定义出来的不是空集合，而是空字典
+# print(type(s))
+# print(type(s2))
+# 集合的常见用法
+# 1：add,添加元素
+# s.add("ivti")
+# s.add("till")
+# print(s1)
+# 2：remove,删除指定元素,只能删除一个元素啊。
+# s.remove("till")
+# print(s)
+# 3: pop,随机删除元素并返回,返回的元素怎么写
+# e=s1.pop()
+# print(e)
+# 4,5,6
+# s2=(34,56,78,99,21,3,4,6,7)
+# print(s1.difference(s2))        # difference求两个集合的差值，包含在第一个集合，但不在第二个集合 ==“-"
+# print(s1.union(s2))          # union,合并两个集合 =="|"
+# print(s1.intersection(s2))     # intersection求两个集合的交集 =="&"
+# 8：clear,清空集合
+# s.clear()   # 字符串可以用clear,int类型不行
+
+# --------------------------------------------- 集合 set 案例 ---------------------------------------
+# # 选修足球学生名单
+# football_set = {"王林", "曾牛", "徐立国", "遁天", "天运子", "韩立", "厉飞雨", "乌丑", "紫灵"}
+# # 选修篮球学生名单
+# basketball_set = {"张铁", "墨居仁","王林", "姜老道", "曾牛", "王蝉", "韩立", "天运子", "李化元", "厉飞雨", "云露"}
+# # 选修法语学生名单
+# french_set = {"许木", "王卓", "十三", "虎咆", "姜老道", "天运子",  "红蝶", "厉飞雨", "韩立", "曾牛"}
+# # 选修艺术学生名单
+# art_set = { "遁天", "天运子", "韩立", "虎咆", "姜老道", "紫灵"}
+# # 1. 找出同时选修了 法语 和 艺术 的学生  french_set  art_set 并集，intersection
+# print(french_set.intersection(art_set))
+# # 方式2 ，&：求并集
+# print(french_set & art_set)
+#
+# # 2. 找出同时选修了所有四门课程的学生,方式一
+# b=french_set.intersection(art_set)
+# c=b.intersection(football_set)
+# d=c.intersection(basketball_set)
+# print(d)
+# # 方式2：
+# print(football_set & basketball_set & french_set & art_set)
+# # 3.找出选修了足球, 但是没有选修篮球的学生 - 差集
+# print(football_set.difference(basketball_set))
+# # 4. 统计每一个学生选修的课程数量
+# a=football_set.union(basketball_set)
+# a1=a.union(french_set)
+# a2=a1.union(art_set)
+# print(a2)
+# # 求出了所有学生的姓名 并集：|: 还是去重了
+# # l=[]
+# # for i in football_set | basketball_set | french_set | art_set:
+#     #l.append(i)
+# all_list=[*football_set,*basketball_set,*french_set,*art_set]
+# print(all_list) # 没去重的总人数
+# for i in a2:
+#     sum=all_list.count(i)
+#     print(f"{i}参见了{sum}个项目")
+# 字典，dict={key:value},和集合（set)一样，不能重复
+# 注意，key为不可变类型，可以为，string,int,float以及tuple(元组)
+d1={"dazai":659,"chuya":700}
+d2={} # 空字典
+d3=dict()
+score=d1["chuya"]
+print(score)
+#修改value值
+d1["dazai"]=701
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
