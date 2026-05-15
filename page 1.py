@@ -601,13 +601,65 @@ students = (
 #     print(f"{i}参见了{sum}个项目")
 # 字典，dict={key:value},和集合（set)一样，不能重复
 # 注意，key为不可变类型，可以为，string,int,float以及tuple(元组)
-d1={"dazai":659,"chuya":700}
-d2={} # 空字典
-d3=dict()
-score=d1["chuya"]
-print(score)
-#修改value值
-d1["dazai"]=701
+# d1={"dazai":659,"chuya":700}
+# d2={} # 空字典
+# d3=dict()
+# score=d1["chuya"]
+# print(score)
+# #修改value值
+# d1["dazai"]=701
+# 字典的常用操作
+# d={"泡面":4,"火腿":2,"火锅":15,"酸汤面叶":3}
+# d["冰淇凌"]=6 # 添加元素
+# e=d.pop("火腿")
+# del d["泡面"] # 删除字典的key
+# print(d.keys())
+# print(d.values())
+# "崇祯五年的那场雪"
+# dict 购物车案例
+d={}
+while True:
+    print("添加购物车,输入1")
+    print("修改购物车，输入2")
+    print("删除购物车，输入3")
+    print("查询购物车，输入4")
+    print("退出购物车，输入5")
+    choice=int(input("请输入数字1-5"))
+# 添加购物车
+    if choice==1:
+        name=input("输入商品名称")
+        price=input("输入商品单价")
+        count=input("输入商品数量")
+        d[name]={"单价":price,"数量":count}
+    if choice==2:
+        name=input("输入要修改的商品名称")
+        new_price=input("输入新的单价")
+        new_count=input("输入新的数量")
+        d[name]["单价"]=new_price
+        d[name]["数量"]=new_count
+    if choice==3:
+        name=input("输入删除的商品名称")
+        del d[name]
+    if choice==4:
+        for name,info in d.items():
+            print(f"商品名称为{name}，商品价格为{info["单价"]}，商品数量为{info["数量"]}")
+    if choice==5:
+        break
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
