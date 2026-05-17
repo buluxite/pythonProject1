@@ -617,34 +617,181 @@ students = (
 # print(d.values())
 # "崇祯五年的那场雪"
 # dict 购物车案例
-d={}
+# d={}
+# while True:
+#     print("添加购物车,输入1")
+#     print("修改购物车，输入2")
+#     print("删除购物车，输入3")
+#     print("查询购物车，输入4")
+#     print("退出购物车，输入5")
+#     choice=int(input("请输入数字1-5"))
+# # 添加购物车
+#     if choice==1:
+#         name=input("输入商品名称")
+#         if name in d:
+#             print(f"{name}已经添加过了")
+#         else:
+#             price = input("输入商品单价")
+#             count = input("输入商品数量")
+#             d[name] = {"单价": price, "数量": count}
+#     if choice==2:
+#         name=input("输入要修改的商品名称")
+#         if name not in d:
+#             print(f"购物车里没有{name}，请按1去添加吧")
+#         else:
+#             new_price = input("输入新的单价")
+#             new_count = input("输入新的数量")
+#             d[name]["单价"] = new_price
+#             d[name]["数量"] = new_count
+#     if choice==3:
+#         name=input("输入删除的商品名称")
+#         if name not in d:
+#             print(f"很抱歉，购物车没有{name}，删除不了")
+#         else:
+#             del d[name]
+#     if choice==4:
+#         if not d:
+#             print("购物车是空的，快去添加吧")
+#         for name,info in d.items():
+#             print(f"商品名称为{name}，商品价格为{info["单价"]}，商品数量为{info["数量"]}")
+#     if choice==5:
+#         print("成功退出程序，欢迎下次再来")
+#         break
+# 购物车案例2，match.....case
+# cart={}
+# # 招牌
+# a='''
+# ################购物车系统##################
+# #              1.添加商品名称              #
+# #              2.修改商品名称              #
+# #              3.遍历商品名称              #
+# #              4.删除商品名称              #
+# #              5.退出程序                 #
+# ##########################################
+# '''
+# while True:
+#     print("欢迎进入购物车系统")
+#     print(a)
+#     choice = int(input("请输入需要的数字"))
+#     match choice:
+#         case 1:
+#             name = input("请输入需要添加的商品名称")
+#             if name in cart:
+#                 print(f"{name}在购物车已存在")
+#             else:
+#                 price = input("请输入商品单价")
+#                 count = input("请输入商品数量")
+#                 cart[name] = {"price": price, "count": count}
+#         case 2:
+#             name = input("请输入商品名称")
+#             if name not in cart:
+#                 print(f"很抱歉，购物车没有{name}，修改不了")
+#             else:
+#                 new_price = input("请输入新的价格")
+#                 new_count = input("请输入新的数量")
+#                 cart[name]["price"] = new_price
+#                 cart[name]["count"] = new_count
+#                 print(f"{name}的新价格为{new_price},新数量为{new_count}")
+#         case 3:
+#             if not cart:
+#                 print("很抱歉，购物车为空，快去添加吧")
+#             else:
+#                 for name, info in cart.items():
+#                     print(f"{name},价格为{info["price"]},数量为{info["count"]}")
+#         case 4:
+#             name = input("请输入商品名称")
+#             if name not in cart:
+#                 print(f"{name}不存在购物车，无法删除")
+#             else:
+#                 del cart[name]
+#                 print("删除成功了")
+#         case 5:
+#             print("退出成功")
+#             break
+#         case _:
+#             print("指令错误，请输入1-5之间的数字")
+# 班级成绩管理系统
+student={}
+b='''
+########### 班级成绩管理系统 #############
+#            1，录入成绩                #
+#            2，查询总分                #
+#            3，修改单科                #
+#            4，遍历字典                #
+#            5，退出系统                #
+########################################
+'''
 while True:
-    print("添加购物车,输入1")
-    print("修改购物车，输入2")
-    print("删除购物车，输入3")
-    print("查询购物车，输入4")
-    print("退出购物车，输入5")
-    choice=int(input("请输入数字1-5"))
-# 添加购物车
-    if choice==1:
-        name=input("输入商品名称")
-        price=input("输入商品单价")
-        count=input("输入商品数量")
-        d[name]={"单价":price,"数量":count}
-    if choice==2:
-        name=input("输入要修改的商品名称")
-        new_price=input("输入新的单价")
-        new_count=input("输入新的数量")
-        d[name]["单价"]=new_price
-        d[name]["数量"]=new_count
-    if choice==3:
-        name=input("输入删除的商品名称")
-        del d[name]
-    if choice==4:
-        for name,info in d.items():
-            print(f"商品名称为{name}，商品价格为{info["单价"]}，商品数量为{info["数量"]}")
-    if choice==5:
-        break
+    print("欢迎来到班级成绩管理系统")
+    print(b)
+    choice=int(input("请输入你的选择"))
+    match choice:
+        case 1: # 录入成绩
+            name=input("请输入学生姓名")
+            if name in student:
+                print(f"{name}学生已存在，请勿重复添加")
+            else:
+
+                chinese=int(input("请输入该学生语文成绩"))
+                math=int(input("请输入该学生数学成绩"))
+                english=int(input("请输入该学生英语成绩"))
+                total=chinese+math+english
+                student[name]={"语文":chinese,
+                               "数学":math,
+                               "英语":english,
+                               "总分":total}
+                print("录入成功")
+        case 2: # 查询总分
+            name = input("请输入学生姓名")
+            if name not in student:
+                print("并未查询到该学生，请先添加")
+            else:
+
+                print(f"该学生总成绩为{student[name]["总分"]}")
+
+        case 3: # 修改单科
+            name=input("请输入学生姓名")
+            if name not in student:
+                print(f"{name}不在名单，无法修改")
+            else:
+                print('''
+                修改语文按1
+                修改数学按2
+                修改英语按3
+                ''')
+                sub=int(input("请输入要修改的学科数字"))
+
+                match sub:
+                    case 1:
+                        new_chinese=int(input("请输入新的语文成绩"))
+                        student[name]["语文"]=new_chinese
+                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+                        student[name]["总分"]=new_total
+                        print("修改成功")
+                    case 2:
+                        new_math = int(input("请输入新的数学成绩"))
+                        student[name]["数学"] = new_math
+                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+                        student[name]["总分"]=new_total
+                        print("修改成功")
+                    case 3:
+                        new_english = int(input("请输入新的数学成绩"))
+                        student[name]["英语"] = new_english
+                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+                        student[name]["总分"]=new_total
+                        print("修改成功")
+                    case _:
+                        print("条件不匹配，重新输入")
+        case 4:
+            for name,info in student.items():
+                avg=info["总分"]/3
+                print(f"{name}，语文成绩：{info["语文"]}，数学成绩：{info["数学"]}，"
+                      f"英语成绩：{info["英语"]}，平均分:{avg:.1f}")
+        case 5:
+            print("成功退出系统")
+            break
+        case _:
+            print("指令出错，请输入1-5之间的数字")
 
 
 
