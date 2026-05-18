@@ -711,87 +711,260 @@ students = (
 #         case _:
 #             print("指令错误，请输入1-5之间的数字")
 # 班级成绩管理系统
-student={}
-b='''
-########### 班级成绩管理系统 #############
-#            1，录入成绩                #
-#            2，查询总分                #
-#            3，修改单科                #
-#            4，遍历字典                #
-#            5，退出系统                #
-########################################
-'''
-while True:
-    print("欢迎来到班级成绩管理系统")
-    print(b)
-    choice=int(input("请输入你的选择"))
-    match choice:
-        case 1: # 录入成绩
-            name=input("请输入学生姓名")
-            if name in student:
-                print(f"{name}学生已存在，请勿重复添加")
-            else:
+# student={}
+# b='''
+# ########### 班级成绩管理系统 #############
+# #            1，录入成绩                #
+# #            2，查询总分                #
+# #            3，修改单科                #
+# #            4，遍历字典                #
+# #            5，退出系统                #
+# ########################################
+# '''
+# while True:
+#     print("欢迎来到班级成绩管理系统")
+#     print(b)
+#     choice=int(input("请输入你的选择"))
+#     match choice:
+#         case 1: # 录入成绩
+#             name=input("请输入学生姓名")
+#             if name in student:
+#                 print(f"{name}学生已存在，请勿重复添加")
+#             else:
+#
+#                 chinese=int(input("请输入该学生语文成绩"))
+#                 math=int(input("请输入该学生数学成绩"))
+#                 english=int(input("请输入该学生英语成绩"))
+#                 total=chinese+math+english
+#                 student[name]={"语文":chinese,
+#                                "数学":math,
+#                                "英语":english,
+#                                "总分":total}
+#                 print("录入成功")
+#         case 2: # 查询总分
+#             name = input("请输入学生姓名")
+#             if name not in student:
+#                 print("并未查询到该学生，请先添加")
+#             else:
+#
+#                 print(f"该学生总成绩为{student[name]["总分"]}")
+#
+#         case 3: # 修改单科
+#             name=input("请输入学生姓名")
+#             if name not in student:
+#                 print(f"{name}不在名单，无法修改")
+#             else:
+#                 print('''
+#                 修改语文按1
+#                 修改数学按2
+#                 修改英语按3
+#                 ''')
+#                 sub=int(input("请输入要修改的学科数字"))
+#
+#                 match sub:
+#                     case 1:
+#                         new_chinese=int(input("请输入新的语文成绩"))
+#                         student[name]["语文"]=new_chinese
+#                         new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+#                         student[name]["总分"]=new_total
+#                         print("修改成功")
+#                     case 2:
+#                         new_math = int(input("请输入新的数学成绩"))
+#                         student[name]["数学"] = new_math
+#                         new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+#                         student[name]["总分"]=new_total
+#                         print("修改成功")
+#                     case 3:
+#                         new_english = int(input("请输入新的数学成绩"))
+#                         student[name]["英语"] = new_english
+#                         new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
+#                         student[name]["总分"]=new_total
+#                         print("修改成功")
+#                     case _:
+#                         print("条件不匹配，重新输入")
+#         case 4:
+#             for name,info in student.items():
+#                 avg=info["总分"]/3
+#                 print(f"{name}，语文成绩：{info["语文"]}，数学成绩：{info["数学"]}，"
+#                       f"英语成绩：{info["英语"]}，平均分:{avg:.1f}")
+#         case 5:
+#             print("成功退出系统")
+#             break
+#         case _:
+#             print("指令出错，请输入1-5之间的数字")
+# 简易通讯录
+# add={}
+# a='''
+# ############欢迎进入通讯录系统###############
+# #            1，添加联系人                 #
+# #            2，模糊搜索                   #
+# #            3，按分组查看                 #
+# ##########################################
+# '''
+# while True:
+#     print("欢迎来到通讯录系统")
+#     print(a)
+#     choice=int(input("请输入数字1-3"))
+#     match choice:
+#         case 1:
+#             name=input("请输入联系人的姓名")
+#             if name in add:
+#                 print("该联系人已存在")
+#             else:
+#                 phone=input("请输入电话号码")
+#                 address=input("请输入联系人的地址")
+#                 group=input("请输入分组")
+#                 add[name]={"phone":phone,"address":address,"group":group}
+#                 print("添加成功")
+#         case 2: # 遍历
+#             name = input("请输入联系人的姓名")
+#             if name not in add:
+#                 print("查无此人")
+#             else:
+#                 print(f"{name},联系电话：{add[name]["phone"]},地址：{add[name]["address"]},分组：{add[name]["group"]}")
+#
+#         case 3:    # 按分组查看
+#             group = input("请输入联系人的分组")
+#             for name,info in add.items():
+#                 if group==info["group"]:
+#                     print(name,info["phone"])
+#         case _:
+#             break
+# # 游戏背包系统
+# backpack={}
+# a='''
+# ############ 游戏背包系统 #################
+# ￥            1，捡装备                  ￥
+# ￥            2，装备武器                ￥
+# ￥            3，丢弃垃圾                ￥
+# ￥            4，整理背包                ￥
+# #########################################
+# '''
+# ma=0
+#
+# while True:
+#     print("欢迎来到背包系统")
+#     print(a)
+#     choice=int(input("请输入你的选择"))
+#     match choice:
+#         case 1:   # 捡装备，添加
+#             name=input("输入装备名称")
+#             if name in backpack:
+#                 print("该装备已存在，请勿重复添加")
+#             else:
+#                 type=input("请输入武器类型")
+#                 attack=int(input("请输入攻击值"))
+#                 dura=int(input("请输入耐久度"))
+#                 backpack[name]={"type":type,"attack":attack,"dura":dura}
+#                 print("添加成功")
+#         case 2:   # 装备武器，修改
+#             name = input("输入装备名称")
+#             if name not in backpack:
+#                 print("该武器不存在")
+#             else:
+#                 ma+=backpack[name]["attack"]
+#                 new_dura=backpack[name]["dura"]-10
+#                 backpack[name]["dura"]=new_dura
+#                 print(f"主人的攻击力为{ma},武器的耐久度为{new_dura}")
+#         case 3:    # 丢弃垃圾，删除
+#
+#             backpack={name:info for name,info in backpack.items() if info["dura"]!=0} # 循环中不能删除
+#             print("耐久度为0的已删除")
+#
+#
+#         case 4:  # 整理背包，遍历
+#             for name,info in backpack.items():
+#                 print(f"{name},攻击力：{info["attack"]},耐久度：{info["dura"]}")
+#         case _:
+#             break
 
-                chinese=int(input("请输入该学生语文成绩"))
-                math=int(input("请输入该学生数学成绩"))
-                english=int(input("请输入该学生英语成绩"))
-                total=chinese+math+english
-                student[name]={"语文":chinese,
-                               "数学":math,
-                               "英语":english,
-                               "总分":total}
-                print("录入成功")
-        case 2: # 查询总分
-            name = input("请输入学生姓名")
-            if name not in student:
-                print("并未查询到该学生，请先添加")
-            else:
+# # 欢迎来到教务管理系统
+# student={}
+# a='''
+# **************** 欢迎来到教务管理系统 ********************
+# *                 1，添加学生信息                       *
+# *                 2，修改学生信息                       *
+# *                 3，删除学生信息                       *
+# *                 4，查询学生信息                       *
+# *                 5，遍历学生信息                       *
+# *                 6，统计班级成绩                       *
+# *******************************************************
+# '''
+# while True:
+#     print(a)
+#     choice=int(input("请输入你的选择（1-6）"))
+#     match choice:
+#         case 1:
+#             name=input("请输入学生姓名")
+#             if name in student:
+#                 print("该学生已存在，请勿重复添加")
+#             else:
+#                 chinese=int(input("学生的语文成绩"))
+#                 math=int(input("学生的数学成绩"))
+#                 english=int(input("学生的英语成绩"))
+#                 student[name]={"chinese":chinese,"math":math,"english":english}
+#                 print("录入成功")
+#         case 2:
+#             name=input("请输入学生信息")
+#             if name not in student:
+#                 print("系统中没有该学生")
+#             else:
+#                 new_chinese=int(input("请输入新的语文成绩"))
+#                 new_math=int(input("请输入新的数学成绩"))
+#                 new_english=int(input("请输入新的英语成绩"))
+# #                 student[name]["chinese"]=new_chinese
+# #                 student[name]["math"]=new_math
+#                 student[name]["english"]=new_english
+#                 print("修改成功")
+#         case 3:
+#             name = input("请输入要删除的学生信息")
+#             if name not in student:
+#                 print("系统没有该学生的信息")
+#             else:
+#                 del student[name]
+#                 print("删除成功")
+#         case 4:
+#             name=input("请输入要查询的学生信息")
+#             if name not in student:
+#                 print("该学生信息不存在")
+#             else:
+#                 print(student[name])
+#         case 5:
+#             for name,info in student.items():
+#                 print(f"{name},语文：{info["chinese"]},数学：{info["math"]},英语：{info["english"]}")
+#         case 6: #  输出语文，数学，英语的最大值，最小值，以及平均值
+#
+#         #     sum_chinese=0    #太麻烦了
+#         #     sum_math=0
+#         #     sum_english=0
+#         #     l1=[]
+#         #     l2=[]
+#         #     l3=[]
+#         #     for name,info in student.items():
+#         #        sum_chinese+=info["chinese"]
+#         #        sum_math+= info["math"]
+#         #        sum_english+= info["english"]
+#         #        l1.append(info["chinese"])
+#         #        a1=max(l1)
+#         #        a2=min(l1)
+#         #        l2.append(info["math"])
+#         #        b = max(l2)
+#         #        b1=min(l2)
+#         #        l3.append(info["english"])
+#         #        c= max(l3)
+#         #        c1=min(l3)
+#         #     name1={name for name,info in student.items() if info["chinese"]==a1}
+#         #     name2 ={name for name, info in student.items()if info["chinese"] == a2}
+#         #     name3 = {name for name, info in student.items() if info["math"] == b}
+#         #     name4 = {name for name, info in student .items()if info["math"] == b1}
+#         #     name5 = {name for name, info in student .items()if info["english"] ==c}
+#         #     name6= {name for name, info in student.items() if info["english"] ==c1}
+#         #     print(f"语文的最高分为{a1},是{name1}同学,最低分为{a2},是{name2}同学，平均分为{sum_chinese/len(student):.1f}")
+#         #     print(f"数学的最高分为{b},是{name3}同学，最低分为{b1},是{name4}同学，平均分为{sum_math /len(student):.1f}")
+#         #     print(f"英语的最高分为{c},是{name5}同学，最低分为{c1},是{name6}同学，平均分为{sum_english /len(student):.1f}")
+#         case _:
+#             break
 
-                print(f"该学生总成绩为{student[name]["总分"]}")
-
-        case 3: # 修改单科
-            name=input("请输入学生姓名")
-            if name not in student:
-                print(f"{name}不在名单，无法修改")
-            else:
-                print('''
-                修改语文按1
-                修改数学按2
-                修改英语按3
-                ''')
-                sub=int(input("请输入要修改的学科数字"))
-
-                match sub:
-                    case 1:
-                        new_chinese=int(input("请输入新的语文成绩"))
-                        student[name]["语文"]=new_chinese
-                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
-                        student[name]["总分"]=new_total
-                        print("修改成功")
-                    case 2:
-                        new_math = int(input("请输入新的数学成绩"))
-                        student[name]["数学"] = new_math
-                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
-                        student[name]["总分"]=new_total
-                        print("修改成功")
-                    case 3:
-                        new_english = int(input("请输入新的数学成绩"))
-                        student[name]["英语"] = new_english
-                        new_total=student[name]["语文"]+student[name]["数学"]+student[name]["英语"]
-                        student[name]["总分"]=new_total
-                        print("修改成功")
-                    case _:
-                        print("条件不匹配，重新输入")
-        case 4:
-            for name,info in student.items():
-                avg=info["总分"]/3
-                print(f"{name}，语文成绩：{info["语文"]}，数学成绩：{info["数学"]}，"
-                      f"英语成绩：{info["英语"]}，平均分:{avg:.1f}")
-        case 5:
-            print("成功退出系统")
-            break
-        case _:
-            print("指令出错，请输入1-5之间的数字")
 
 
 
