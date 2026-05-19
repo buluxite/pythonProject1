@@ -1,30 +1,35 @@
-#使用直方图
-#绘制三次
+# 函数
+# 定义函数 打印“---------------”
+# def out_line():
+#     print("-------------------------------------------")
+# # 调用函数
+# out_line()
+# 计算圆的面积
+# def circle_m(r):
+#     m=3.14*r*r
+#     return m
+# print(circle_m(3))
+# 计算长方形的面积
+def cm(m,n):
+    """
+    计算长方形的面积
+    :param m:长度
+    :param n:宽度
+    :return:返回长方形的面积
+    """
+    mian=m*n
+    return mian
+cm1=cm(3,4)
+print(cm1)
+help(cm)
+# 计算圆的周长，半径（返回两个值）
+# def circle(r):
+#     return round( 3.14*r*r,1),round(3.14*r*2,1) # 保留一味小数
+#  # 作为元组 解包
+# area,length = circle(10)
+# print(area)
+# print(length)
 
-from matplotlib import pyplot as plt
-plt.rcParams["font.family"]=["sans-serif"]
-plt.rcParams["font.sans-serif"]=["SimHei"]
-
-#战狼2三天的数据
-x1=range(1,4)#天数三天
-y1=[23,45,34]#三天的票房数
-
-x2=range(7,10)
-y2=[23,56,33]
-
-x3=range(13,16)
-y3=[34,56,24]
-plt.figure(figsize=(16,8),dpi=65)
-plt.bar(x1,y1)
-plt.bar(x2,y2)
-plt.bar(x3,y3)
-x=list(x1)+list(x2)+list(x3)
-a=["战狼2","黑神话悟空","崩铁星穹铁道"]
-plt.xticks(x[::3],a)
-plt.xlabel("片名")
-plt.ylabel("票房数")
-plt.grid(alpha=0.4)
-plt.show()
 
 
 

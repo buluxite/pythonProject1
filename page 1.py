@@ -879,91 +879,91 @@ students = (
 #             break
 
 # 欢迎来到教务管理系统
-student={}
-a='''
-**************** 欢迎来到教务管理系统 ********************
-*                 1，添加学生信息                       *
-*                 2，修改学生信息                       *
-*                 3，删除学生信息                       *
-*                 4，查询学生信息                       *
-*                 5，遍历学生信息                       *
-*                 6，统计班级成绩                       *
-*******************************************************
-'''
-while True:
-    print(a)
-    choice=int(input("请输入你的选择（1-6）"))
-    match choice:
-        case 1:
-            name=input("请输入学生姓名")
-            if name in student:
-                print("该学生已存在，请勿重复添加")
-            else:
-                chinese=int(input("学生的语文成绩"))
-                math=int(input("学生的数学成绩"))
-                english=int(input("学生的英语成绩"))
-                student[name]={"chinese":chinese,"math":math,"english":english}
-                print("录入成功")
-        case 2:
-            name=input("请输入学生信息")
-            if name not in student:
-                print("系统中没有该学生")
-            else:
-                new_chinese=int(input("请输入新的语文成绩"))
-                new_math=int(input("请输入新的数学成绩"))
-                new_english=int(input("请输入新的英语成绩"))
-#                 student[name]["chinese"]=new_chinese
-#                 student[name]["math"]=new_math
-                student[name]["english"]=new_english
-                print("修改成功")
-        case 3:
-            name = input("请输入要删除的学生信息")
-            if name not in student:
-                print("系统没有该学生的信息")
-            else:
-                del student[name]
-                print("删除成功")
-        case 4:
-            name=input("请输入要查询的学生信息")
-            if name not in student:
-                print("该学生信息不存在")
-            else:
-                print(student[name])
-        case 5:
-            for name,info in student.items():
-                print(f"{name},语文：{info["chinese"]},数学：{info["math"]},英语：{info["english"]}")
-        case 6: #  输出语文，数学，英语的最大值，最小值，以及平均值
-
-            sum_chinese=0    #太麻烦了
-            sum_math=0
-            sum_english=0
-            l1=[]
-            l2=[]
-            l3=[]
-            for name,info in student.items():
-               sum_chinese+=info["chinese"]
-               sum_math+= info["math"]
-               sum_english+= info["english"]
-               l1.append(info["chinese"])
-               a1=max(l1)
-               a2=min(l1)
-               l2.append(info["math"])
-               b = max(l2)
-               b1=min(l2)
-               l3.append(info["english"])
-               c= max(l3)
-               c1=min(l3)
-            name1={name for name,info in student.items() if info["chinese"]==a1}
-            name2 ={name for name, info in student.items()if info["chinese"] == a2}
-            name3 = {name for name, info in student.items() if info["math"] == b}
-            name4 = {name for name, info in student .items()if info["math"] == b1}
-            name5 = {name for name, info in student .items()if info["english"] ==c}
-            name6= {name for name, info in student.items() if info["english"] ==c1}
-            print(f"语文的最高分为{a1},是{name1}同学,最低分为{a2},是{name2}同学，平均分为{sum_chinese/len(student):.1f}")
-            print(f"数学的最高分为{b},是{name3}同学，最低分为{b1},是{name4}同学，平均分为{sum_math /len(student):.1f}")
-            print(f"英语的最高分为{c},是{name5}同学，最低分为{c1},是{name6}同学，平均分为{sum_english /len(student):.1f}")
-        case _:
-            break
+# student={}
+# a='''
+# **************** 欢迎来到教务管理系统 ********************
+# *                 1，添加学生信息                       *
+# *                 2，修改学生信息                       *
+# *                 3，删除学生信息                       *
+# *                 4，查询学生信息                       *
+# *                 5，遍历学生信息                       *
+# *                 6，统计班级成绩                       *
+# *******************************************************
+# '''
+# while True:
+#     print(a)
+#     choice=int(input("请输入你的选择（1-6）"))
+#     match choice:
+#         case 1:
+#             name=input("请输入学生姓名")
+#             if name in student:
+#                 print("该学生已存在，请勿重复添加")
+#             else:
+#                 chinese=int(input("学生的语文成绩"))
+#                 math=int(input("学生的数学成绩"))
+#                 english=int(input("学生的英语成绩"))
+#                 student[name]={"chinese":chinese,"math":math,"english":english}
+#                 print("录入成功")
+#         case 2:
+#             name=input("请输入学生信息")
+#             if name not in student:
+#                 print("系统中没有该学生")
+#             else:
+#                 new_chinese=int(input("请输入新的语文成绩"))
+#                 new_math=int(input("请输入新的数学成绩"))
+#                 new_english=int(input("请输入新的英语成绩"))
+# #                 student[name]["chinese"]=new_chinese
+# #                 student[name]["math"]=new_math
+#                 student[name]["english"]=new_english
+#                 print("修改成功")
+#         case 3:
+#             name = input("请输入要删除的学生信息")
+#             if name not in student:
+#                 print("系统没有该学生的信息")
+#             else:
+#                 del student[name]
+#                 print("删除成功")
+#         case 4:
+#             name=input("请输入要查询的学生信息")
+#             if name not in student:
+#                 print("该学生信息不存在")
+#             else:
+#                 print(student[name])
+#         case 5:
+#             for name,info in student.items():
+#                 print(f"{name},语文：{info["chinese"]},数学：{info["math"]},英语：{info["english"]}")
+#         case 6: #  输出语文，数学，英语的最大值，最小值，以及平均值
+#
+#             sum_chinese=0    #太麻烦了
+#             sum_math=0
+#             sum_english=0
+#             l1=[]
+#             l2=[]
+#             l3=[]
+#             for name,info in student.items():
+#                sum_chinese+=info["chinese"]
+#                sum_math+= info["math"]
+#                sum_english+= info["english"]
+#                l1.append(info["chinese"])
+#                a1=max(l1)
+#                a2=min(l1)
+#                l2.append(info["math"])
+#                b = max(l2)
+#                b1=min(l2)
+#                l3.append(info["english"])
+#                c= max(l3)
+#                c1=min(l3)
+#             name1={name for name,info in student.items() if info["chinese"]==a1}
+#             name2 ={name for name, info in student.items()if info["chinese"] == a2}
+#             name3 = {name for name, info in student.items() if info["math"] == b}
+#             name4 = {name for name, info in student .items()if info["math"] == b1}
+#             name5 = {name for name, info in student .items()if info["english"] ==c}
+#             name6= {name for name, info in student.items() if info["english"] ==c1}
+#             print(f"语文的最高分为{a1},是{name1}同学,最低分为{a2},是{name2}同学，平均分为{sum_chinese/len(student):.1f}")
+#             print(f"数学的最高分为{b},是{name3}同学，最低分为{b1},是{name4}同学，平均分为{sum_math /len(student):.1f}")
+#             print(f"英语的最高分为{c},是{name5}同学，最低分为{c1},是{name6}同学，平均分为{sum_english /len(student):.1f}")
+#         case _:
+#             break
 
 
 
