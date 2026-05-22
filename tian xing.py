@@ -110,22 +110,98 @@
 # print(f"平均值{avg}")
 # 不定长参数----位置传递(*args)
 # 不定长参数，关键字参数 **kwarg
-def clca_num(*args,**kwargs):
-    ma=max(args)
-    mi=min(args)
-    avg=sum(args)/len(args)
-    if kwargs.get("round"):
-        round(avg,kwargs.get("round"))
-    print(kwargs)
-    return ma,mi,avg
-ma,mi,avg=clca_num(11,22,33,44,55,66,77,88,99,round=2,count=0)
-print(ma)
-print(mi)
-print(avg)
+# def clca_num(*args,**kwargs):
+#     ma=max(args)
+#     mi=min(args)
+#     avg=sum(args)/len(args)
+#     if kwargs.get("round"):
+#         round(avg,kwargs.get("round"))
+#     print(kwargs)
+#     return ma,mi,avg
+# ma,mi,avg=clca_num(11,22,33,44,55,66,77,88,99,round=2,count=0)
+# print(ma)
+# print(mi)
+# print(avg)
 # def info(**kwargs):
 #     print(type(kwargs))
 #     print(f"内容是{kwargs}")
 # info(name="小米",age=36,gentle="男",city="武汉")
+# 当参数作为函数
+# def add(x,y):
+#     return x+y
+# def subtract(x,y):
+#     return x-y
+# def calc(x,y,oper):
+#     return oper(x,y)  #  oper作为函数调用,调用时填写上面函数名
+# result=calc(32,56,subtract)
+# print(result)
+# 匿名函数 lambda 参数，函数体 .注意，函数体是单行表达式
+# def out_line():
+#     print("----------")
+# out_line()
+# out_lint=lambda :print("-------")
+# out_lint()
+# #定义一个加法
+# def add(x,y):
+#     return x+y
+# print(add(4,7))
+# #lambda 写法
+# add1=lambda x,y:x+y
+# print(add1(7,7))
+# 完成以下列表的排序操作，按照每一个元素的字符个数，从小到大排序
+# data_list=["c++","c","python","jack","php","java","go","javascript","rust"]
+# def sort_list(x):
+#     co=[]
+#     for i in x:
+#         sum=len(i)
+#         co.append(sum)
+#     return sorted(co)
+# print(sort_list(data_list))
+# def sort_list1(x):
+#     return sorted(x,key=len,reverse=True) # key=len,表示按照元素的长度排序
+# print(sort_list1(data_list))
+# 定义一个函数，根据传入的数字，计算该数字阶乘的结果
+# def factorial(x):
+#     mul=1
+#     for i in range(1,x+1):
+#         mul*=i
+#     return mul
+# x=int(input("请输入你的数字"))
+# result=factorial(x)
+# print(result)
+# 递归调用，数字阶乘
+# def factorial(x):
+#     if x==1:
+#         return 1
+#     else:
+#         return x*factorial(x-1) # 自己调用自己，当x=1,返回1，不再进行调用
+# result=factorial(int(input("请输入数字")))
+# print(result)
+def total_price(product,coupon,discount,fee):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
