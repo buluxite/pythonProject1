@@ -223,43 +223,88 @@
 # # 4,运费
 # shipping=int(input("请输入运费"))
 # total=total+shipping
-def calculate_order_total(items,coupon,points,shipping):
-    total=0
-    for i in items:
-        total+=i["price"]*i["count"]
-    print(f"商品的价格为{total}")
-    # 计算优惠，coupon
-    if coupon>total:
-        print("不好意思，优惠不能超过单价")
-    else:
-        if total>=5000:
-            total=total-coupon
-            print(f"优惠后的价格是{total}")
-        else:
-            print("商品总价没有5000，不给予优惠")
-    # 计算折扣，points
-    if total>=5000:
-        if points>total:
-            print("折扣金额不能超过商品单价")
-        else:
-            if points//100!=0:
-                b=points//100
-                total=total-b
-                print(f"打折后的价格为{total}")
-            else:
-                print("积分不够整百，不能抵扣")
+# def calculate_order_total(items,coupon,points,shipping):
+#     total=0
+#     for i in items:
+#         total+=i["price"]*i["count"]
+#     print(f"商品的价格为{total}")
+#     # 计算优惠，coupon
+#     if coupon>total:
+#         print("不好意思，优惠不能超过单价")
+#     else:
+#         if total>=5000:
+#             total=total-coupon
+#             print(f"优惠后的价格是{total}")
+#         else:
+#             print("商品总价没有5000，不给予优惠")
+#     # 计算折扣，points
+#     if total>=5000:
+#         if points>total:
+#             print("折扣金额不能超过商品单价")
+#         else:
+#             if points//100!=0:
+#                 b=points//100
+#                 total=total-b
+#                 print(f"打折后的价格为{total}")
+#             else:
+#                 print("积分不够整百，不能抵扣")
+#
+#     else:
+#         print("商品的总金额没达到5000，不给予使用积分卡")
+#     # 运费
+#     total+=shipping
+#     print(f"最后的价格为{total}")
+#     return total
+# items=[{"name":"苹果","price":1000,"count":3},
+#        {"name":"西瓜","price":2000,"count":1},
+#        {"name":"草莓","price":1000,"count":2}]
+#
+# calculate_order_total(items,1000,67800,500)
+# 电商订单计算器
+# def calculate_order_total(items,coupon,points,shipping):
+#     total=0
+#     for i in items:
+#         total+=i["price"]*i["count"]
+#     print(f"商品的价格为{total}")
+#     if total>=5000 and coupon<=total:
+#         total-=coupon
+#         print(f"经过优惠后的价格为{total}")
+#     else:
+#         print("不能优惠")
+#     if total>=5000 and points//100<total:
+#         total-=points//100
+#         print(f"积分折扣后的价格为{total}")
+#     else:
+#         print("不能优惠")
+#     total+=shipping
+#     print(f"加上运费后，最后的价格为{total}")
+#     return total
+# items = [
+#     {'name': 'iPhone', 'price': 5000, 'count': 1},  # 第1个商品（字典）
+#     {'name': 'iPad',   'price': 3000, 'count': 2}   # 第2个商品（字典）
+# ]
+# calculate_order_total(items,500,100000,50)
+# 简单的运费计算器
+# def calculate_shipping(amount,is_vip):
+#     total=0
+#     if is_vip=="false":
+#
+#         if amount<99:
+#             total+=10
+#             print("运费10元")
+#         elif amount>=99:
+#             total+=0
+#             print("免运费")
+#     elif is_vip=="true":
+#         print("尊贵的vip用户，免运费")
+#         total+=0
+#     return total
+# calculate_shipping(99,"true")
 
-    else:
-        print("商品的总金额没达到5000，不给予使用积分卡")
-    # 运费
-    total+=shipping
-    print(f"最后的价格为{total}")
-    return total
-items=[{"name":"苹果","price":1000,"count":3},
-       {"name":"西瓜","price":2000,"count":1},
-       {"name":"草莓","price":1000,"count":2}]
 
-calculate_order_total(items,1000,67800,500)
+
+
+
 
 
 
