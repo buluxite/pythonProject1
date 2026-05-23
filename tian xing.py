@@ -177,7 +177,95 @@
 #         return x*factorial(x-1) # 自己调用自己，当x=1,返回1，不再进行调用
 # result=factorial(int(input("请输入数字")))
 # print(result)
-def total_price(product,coupon,discount,fee):
+# 计算最后的商品的总价，需要：参数
+# 1，商品列表（商品名称，商品单价，商品数量）
+# 2，优惠劵金额
+# 3，积分数量
+# 4，运费
+# def calculate_order_total(items,coupon,points,shipping):
+#     pass
+# # 1，计算商品总价
+# total=0
+# items={}
+# # 变量 items
+# name=input("请输入商品名称")
+# if name in items:
+#     print("该商品已存在，请勿重复添加")
+# else:
+#     price=int(input("请输入商品价格"))
+#     count=int(input("请输入商品数量"))
+#     items[name]={"price":price,"count":count}
+# for i in items.items():
+#     total1=items["price"]*items["count"]
+#     total+=total1
+# print(total)
+# # 2,优惠劵
+# coupon=int(input("请输入优惠劵的数额"))
+# if coupon>total:
+#     print("优惠金额不可超过总价")
+# else:
+#     if total>=5000:
+#         print("优惠劵满足条件，可以使用")
+#         total =total-coupon
+#     else:
+#         print("商品金额满5000才能使用优惠劵")
+# # 3，积分折扣
+# if total >5000:
+#     print("可以使用")
+#     points=int(input("请输入积分金额"))
+#     if points / 100!=0:
+#         b=points/100
+#         total=total-b
+#     else:
+#         print("抱歉，积分只能整百抵扣")
+# else:
+#     print("不可使用")
+# # 4,运费
+# shipping=int(input("请输入运费"))
+# total=total+shipping
+def calculate_order_total(items,coupon,points,shipping):
+    total=0
+    for i in items:
+        total+=i["price"]*i["count"]
+    print(f"商品的价格为{total}")
+    # 计算优惠，coupon
+    if coupon>total:
+        print("不好意思，优惠不能超过单价")
+    else:
+        if total>=5000:
+            total=total-coupon
+            print(f"优惠后的价格是{total}")
+        else:
+            print("商品总价没有5000，不给予优惠")
+    # 计算折扣，points
+    if total>=5000:
+        if points>total:
+            print("折扣金额不能超过商品单价")
+        else:
+            if points//100!=0:
+                b=points//100
+                total=total-b
+                print(f"打折后的价格为{total}")
+            else:
+                print("积分不够整百，不能抵扣")
+
+    else:
+        print("商品的总金额没达到5000，不给予使用积分卡")
+    # 运费
+    total+=shipping
+    print(f"最后的价格为{total}")
+    return total
+items=[{"name":"苹果","price":1000,"count":3},
+       {"name":"西瓜","price":2000,"count":1},
+       {"name":"草莓","price":1000,"count":2}]
+
+calculate_order_total(items,1000,67800,500)
+
+
+
+
+
+
 
 
 
