@@ -300,6 +300,104 @@
 #         total+=0
 #     return total
 # calculate_shipping(99,"true")
+# 定义一个函数，计算订单的总金额
+# def goods_total(items,discount,points,shipping):
+#     total=0
+#     for item in items:
+#         total+=item["价格"]*item["数量"]
+#     print(f"商品总价为{total}")
+#     if total >=5000:
+#         total-=discount
+#         print(f"优惠后是价格为{total}")
+#     else:
+#         print(f"未满5000，不能优惠")
+#     if total>=5000:
+#         a=points//100
+#         total-=a
+#         print(f"使用积分后，价格为{total}")
+#     else:
+#         print(f"未满5000，不能使用积分")
+#     total+=shipping
+#     print(f"该订单总金额为{total}")
+# goods=[{"名称":"苹果","数量":300 ,"价格":1 },
+#        {"名称":"西瓜","数量":500,"价格":1 },
+#         {"名称":"草莓","数量":1000,"价格":1 }
+# ]
+# goods_total(goods,50,500,77)
+# 阶梯式批发折扣
+# 单价*数量
+# def calculate_wholesale(price,quantity):
+#
+#     total=price*quantity
+#     print(f"商品总价为{total}")
+#     if quantity<10:
+#         print(f"无折扣")
+#     elif quantity<50:
+#         total=total*0.9
+#         print(f"可享受九折优惠,总价为{total:.2f}")
+#     elif quantity<100:
+#         total*=0.8
+#         print(f"可享受八折折优惠,总价为{total:.2f}")
+#     elif quantity>=100:
+#         total*=0.7
+#         print(f"可享受七折优惠,总价为{total:.2f}")
+#     return total
+# calculate_wholesale(100,100)
+# 购物车满减与叠加优惠
+# def checkout(cart,full_reduction,has_member_card):
+#     total=0
+#     for i in cart:
+#         total+=i["数量"]*i["价格"]
+#     print(f"商品总价为{total}")
+#     if has_member_card:
+#         total*=0.95
+#         if total>=full_reduction:
+#             total-=50
+#             if total>=0:
+#                 print(f"会员用户的总价为{total}")
+#             else:
+#                 print("不好意思商品价格不能为0")
+#         else:
+#             print(f"未达到满减金额")
+#     else:
+#         if total>=full_reduction:
+#             total-=50
+#             if total>=0:
+#                 print(f"会员用户的总价为{total}")
+#             else:
+#                 print("不好意思，商品价格不能为0")
+#         else:
+#             print(f"未达到满减金额")
+#     return total
+# cart=[{"名称":"苹果","数量":300 ,"价格":1 },
+#        {"名称":"西瓜","数量":500,"价格":1 },
+#         {"名称":"草莓","数量":1000,"价格":1 }]
+# checkout(cart,1000,False)
+# 运费匹配  math.ceil()向上取整
+import math
+
+
+def get_shipping_fee(region,weight):
+    shipping=0
+    rules = {
+        "江浙沪": {"base": 5, "extra": 1},  # 首重5元，续重1元/kg
+        "北京": {"base": 10, "extra": 5},  # 首重10元，续重5元/kg
+        "新疆": {"base": 20, "extra": 15}  # 首重20元，续重15元/kg
+    }
+    if region in rules:
+        if weight<=1:
+            shipping=rules[region]["base"]
+            print(f"运费价格为{shipping}")
+        else:
+            a=math.ceil(weight-1)
+            shipping=rules[region]["base"]+a*rules[region]["extra"]
+            print(f"运费价格为{shipping}")
+    else:
+        print("配送不在范围内")
+    return shipping
+get_shipping_fee("北京",2.3)
+
+
 
 
 
