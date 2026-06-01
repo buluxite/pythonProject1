@@ -374,28 +374,48 @@
 #         {"名称":"草莓","数量":1000,"价格":1 }]
 # checkout(cart,1000,False)
 # 运费匹配  math.ceil()向上取整
-import math
+# import math
+#
+#
+# def get_shipping_fee(region,weight):
+#     shipping=0
+#     rules = {
+#         "江浙沪": {"base": 5, "extra": 1},  # 首重5元，续重1元/kg
+#         "北京": {"base": 10, "extra": 5},  # 首重10元，续重5元/kg
+#         "新疆": {"base": 20, "extra": 15}  # 首重20元，续重15元/kg
+#     }
+#     if region in rules:
+#         if weight<=1:
+#             shipping=rules[region]["base"]
+#             print(f"运费价格为{shipping}")
+#         else:
+#             a=math.ceil(weight-1)
+#             shipping=rules[region]["base"]+a*rules[region]["extra"]
+#             print(f"运费价格为{shipping}")
+#     else:
+#         print("配送不在范围内")
+#     return shipping
+# get_shipping_fee("北京",2.3)
+# 指定类型注解 (冒号后面加空格)
+# a: int=675
+# b: float=34.56
+# c: str="六一"
+# d: bool=True
+# e: None=None
+# print(f"{a},{b},{c},{d},{e}")
+# l: list[str|int |float]=["西瓜","哈密瓜","龙虾"]
+# # 列表里面的元素是str类型或者int类型,float类型
+# s: set[str]={"123876","987432"}# 集合
+# d1: dict[str,int]={"字典":5,"圆规":3}
+# t: tuple[str,int,int]=("平板",4996,1)
+# l.append("草莓")
+# l.append(999)
+# l.append(5.7)
+# print(f"{l},\n{s},\n{d1},\n{t}")
+# 计算圆的面积
 
 
-def get_shipping_fee(region,weight):
-    shipping=0
-    rules = {
-        "江浙沪": {"base": 5, "extra": 1},  # 首重5元，续重1元/kg
-        "北京": {"base": 10, "extra": 5},  # 首重10元，续重5元/kg
-        "新疆": {"base": 20, "extra": 15}  # 首重20元，续重15元/kg
-    }
-    if region in rules:
-        if weight<=1:
-            shipping=rules[region]["base"]
-            print(f"运费价格为{shipping}")
-        else:
-            a=math.ceil(weight-1)
-            shipping=rules[region]["base"]+a*rules[region]["extra"]
-            print(f"运费价格为{shipping}")
-    else:
-        print("配送不在范围内")
-    return shipping
-get_shipping_fee("北京",2.3)
+
 
 
 
