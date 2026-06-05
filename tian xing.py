@@ -413,10 +413,102 @@
 # l.append(5.7)
 # print(f"{l},\n{s},\n{d1},\n{t}")
 # 计算圆的面积
-
-
-
-
+# 定义类，面向对象 类名的命名规范，开头字母为大写且单词之间无间隔
+# eg:VocalEver
+# class Car:
+#     pass
+# #创建对象
+# c1=Car()
+# c1.name="XS"
+# c1.brand="BMW"
+# c1.price=5000000
+# print(c1.__dict__)
+# # 创建对象 冰箱
+# class Refrigerator:
+#     pass
+# r1=Refrigerator()
+# r1.brand="WER"
+# r1.price=6000
+# r1.name="HER"
+# r1.color="black"
+# print(r1.__dict__)  #  输出r1的所有属性
+# 规范的定义类的方法
+# class Car:
+#     def __init__(self,c_brand,c_name,c_price):
+#         self.brand=c_brand
+#         self.name=c_name
+#         self.price=c_price
+# c1=Car("kwx","xs","50000")
+# print(c1.__dict__)
+# class Refrigerator:
+#      def __init__(self,brand,name,price):
+#          self.brand=brand
+#          self.name=name
+#          self.price=price
+# r1=Refrigerator("kwd","pro",4999)
+# print(r1.__dict__)
+# r2=Refrigerator("AS","I300",9000)
+# print(r2.__dict__)
+# class Car:
+#     # 定义属性
+#     def __init__(self,brand,color,name,price):
+#         self.brand=brand
+#         self.color=color
+#         self.name=name
+#         self.price=price
+#     # 定义跑
+#     def running(self):
+#         print(f"{self.name},{self.brand}正在高速行驶中")
+#
+#     # 定义发布价
+#     def total_cost(self,rate,discount):
+#         return self.price*rate+self.price*discount
+# # 调用函数
+# c1=Car("奔驰","黑色","E300",100000)
+# cost=c1.total_cost(0.8,0.1)
+# print(f"该车辆的总价为{cost:.1f}")
+# c1.running()
+# 定义平板
+# class Tablet:
+#     #  类属性
+#     pen=1
+#     tax_rate=0.1
+#     # self--实例属性
+#     def __init__(self,color,name,brand,price):
+#         self.color=color
+#         self.name=name
+#         self.brand=brand
+#         self.price=price
+#     def function(self):
+#         print(f"{self.name},{self.brand}可以下载大量游戏")
+#     def total_price(self,discount,shipping):
+#         return self.price*discount+shipping
+#     def __eq__(self,other):
+#         return self.price==other.price and self.name == other.name
+#     def __lt__(self,other):
+#         return self.price<other.price
+#     def __str__(self):
+#         return f"{self.name},{self.brand}"
+# # 调用函数
+# t1=Tablet("白色","荣耀","ipad3",4999)
+# t2=Tablet("黑色","荣耀","ipad3",4999)
+# # price1=t1.total_price(0.8,0.1)
+# # print(f"该商品总价为{price1:.1f}")
+# # t1.function()
+# print(t1==t2)
+# print(t1<t2)
+# print(t1)
+# #  本来输出的内存地址，加上__str__,变成了字符串存储
+# print(t1.pen)
+#  教务管理系统的开发（面向对象）
+class Student:
+    def __init__(self,name,chinese,math,english):
+        self.name=name
+        self.chinese=chinese
+        self.math=math
+        self.english=english
+    def __str__(self):
+        return f"{self.name},{self.chinese},{self.math},{self.english}"
 
 
 
