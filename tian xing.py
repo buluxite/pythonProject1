@@ -502,81 +502,114 @@
 # print(t1.pen)
 #  教务管理系统的开发（面向对象）
 class Student:
-    def __init__(self,name,chinese,math,english):
-        self.name=name
-        self.chinese=chinese
-        self.math=math
-        self.english=english
+    def __init__(self, name, chinese, math, english):
+        self.name = name
+        self.chinese = chinese
+        self.math = math
+        self.english = english
+
     def __str__(self):
         return f"{self.name},{self.chinese},{self.math},{self.english}"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 调用Student,
+# s1=Student("李明",56,34,57)
+# print(s1.__dict__)
+# 对象————————教育管理系统
+class Education:
+    def __init__(self):
+        self.student = []
+
+    # 1,添加学生信息
+    def add_student(self):
+        name = input("请输入学生姓名")
+        for student in self.student:
+            if student.name == name:
+                print("该学生已存在，请勿重新输入")
+        else:
+            try:
+                chinese = float(input("请输入该生新的语文成绩"))
+                math = float(input("请输入该生新的数学成绩"))
+                english = float(input("请输入该生新的英语成绩"))
+                student = Student(name, chinese, math, english)
+                self.student.append(student)
+                print("该学生添加成功")
+            except ValueError:
+                print("输入的成绩有误，请重新输入")
+
+    # 2,修改学生成绩
+    def update_student(self):
+        name = input("请输入学生姓名")
+        for student in self.student:
+            if student.name == name:
+                try:
+                    chinese = float(input("请输入该生新的语文成绩"))
+                    math = float(input("请输入该生新的数学成绩"))
+                    english = float(input("请输入该生新的英语成绩"))
+                    student.chinese = chinese
+                    student.math = math
+                    student.english = english
+                    print("修改成功")
+                except ValueError:
+                    print("输入错误，请重新输入")
+        else:
+            print("没有该学生，请重新输入")
+
+    # 3,查询学生成绩
+    def qurry_student(self):
+        name = input("请输入学生姓名")
+        result = [student for student in self.student if student.name == name]
+        # 这么写，写不了else,即没有找到怎么办？
+        if result:
+            print(result[0])
+        else:
+            print("未找到该生的信息")
+
+    # 4,删除学生信息
+    def delete_student(self):
+        name = input("请输入要删除的学生姓名")
+        for student in self.student:
+            if student.name == name:
+                return [student for student in self.student if student.name != name]
+        print("删除成功")
+
+    # 5,展示全部学生信息
+    def show_student(self):
+        print("\n>>>>>>全部学生成绩如下")
+        for student in self.student:
+            print(student)
+
+    def run(self):
+        while True:
+            print("""
+        >>>>>>>>>>>>>欢迎来到教育管理系统<<<<<<<<<<<<<<<<<<<<
+        1,添加学生成绩
+        2,修改学生成绩
+        3,查询学生成绩
+        4,删除学生信息
+        5,展示学生信息
+        """)
+            choice = int(input("请输入你的选择"))
+            match choice:
+                case 1:
+                    self.add_student()
+
+                case 2:
+                    self.update_student()
+
+                case 3:
+                    self.qurry_student()
+
+                case 4:
+                    self.update_student()
+
+                case 5:
+                    self.show_student()
+
+                case _:
+                    print("输入错误请重新输入")
+
+
+if __name__ == "__main__":
+    system = Education()
+    system.run()
