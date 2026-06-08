@@ -716,113 +716,219 @@
 #     system = Education()
 #     system.run_student()
 #  教育管理系统(面向对象)
-class Student:
-    def __init__(self, name, chinese, math, english):
-        self.name = name
-        self.chinese = chinese
-        self.math = math
-        self.english = english
+# class Student:
+#     def __init__(self, name, chinese, math, english):
+#         self.name = name
+#         self.chinese = chinese
+#         self.math = math
+#         self.english = english
+#
+#     def __str__(self):
+#         return f"姓名：{self.name}||语文：{self.chinese}|数学：{self.math}|英语：{self.english}"
+#
+#
+# class Education:
+#     def __init__(self):
+#         self.student = []
+#
+#     def add_student(self): # 添加学生，用for循环
+#         name = input("请输入学生姓名")
+#         for stu in self.student:
+#             if stu.name == name:
+#                 print("该学生已存在，请勿重复添加")
+#                 return
+#         try:
+#             chinese = int(input("请输入学生的语文成绩"))
+#             math = int(input("请输入学生的数学成绩"))
+#             english = int(input("请输入学生的英语成绩"))
+#             if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
+#                 student = Student(name, chinese, math, english)
+#                 self.student.append(student)
+#                 print("该学生成绩添加成功")
+#                 return
+#             else:
+#                 print("学生成绩请输入0-100之间")
+#                 return
+#         except ValueError:
+#             print("请输入正确的数字")
+#
+#     def update_student(self):  # 修改学生信息  用for循环
+#         name = input("请输入学生姓名")
+#         for student in self.student:
+#             if student.name == name:
+#                 try:
+#                     print(student)
+#                     chinese = int(input("请输入学生新的语文成绩"))
+#                     math = int(input("请输入学生新的数学成绩"))
+#                     english = int(input("请输入学生新的英语成绩"))
+#                     if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
+#
+#                         student.chinese=chinese
+#                         student.math=math
+#                         student.english=english
+#                         print(student)
+#                         print("该学生成绩修改成功")
+#                         return
+#                     else:
+#                         print("添加失败")
+#                         print("学生成绩请输入0-100之间")
+#                         return
+#                 except ValueError:
+#                     print("请输入正确的数字")
+#
+#         else:
+#             print("抱歉，没找到该学生信息")
+#
+#     def delete_student(self):  # 删除学生信息 next里面使用for循环
+#         name = input("请输入学生的姓名")
+#         target = next((s for s in self.student if s.name == name), None)
+#         if target  is None:
+#             print("无法删除，未找到该学生信息")
+#         else:
+#             self.student.remove(target)
+#             print("删除成功")
+#
+#     def find_student(self):  # 4,查找指定学生的信息 使用for循环
+#         name = input("请输入学生的姓名")
+#         for student in self.student:
+#             if student.name == name:
+#                 print(student)
+#                 return
+#         print("未找到该学生信息")
+#
+#     def show_student(self):  # 5,展示学生信息 用for循环
+#         for s in self.student:
+#             print(s)
+#
+#     def run_student(self):  # 用户选择即系统交互界面
+#         while True:
+#             print("""
+#                      >>>>>>>>>>>>>>>>>欢迎来到教育管理系统<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>1，添加学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>2，修改学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>3，删除学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>4，查询学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>5，展示学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
+#                      >>>>>>>>>>>>>>>>>6，退出系统    <<<<<<<<<<<<<<<<<<<<<<<<
+#                      """)
+#             choice = int(input("请输入你的选择"))
+#             match choice:
+#                 case 1:
+#                     self.add_student()
+#                 case 2:
+#                     self.update_student()
+#                 case 3:
+#                     self.delete_student()
+#                 case 4:
+#                     self.find_student()
+#                 case 5:
+#                     self.show_student()
+#                 case 6:
+#                     break
+#                 case _:
+#                     print("请输入1-6之间的数字")
+#                     break
+# if __name__=="__main__":
+#     edu=Education()
+#     edu.run_student()
+# 购物车管理系统(面向对象）
+# class Product:
+#     def __init__(self,name,price,count):
+#         self.name=name
+#         self.price=price
+#         self.count=count
+#     def __str__(self):
+#         return f"商品名称：{self.name}，商品价格：{self.price}，商品数量：{self.count}"
+# class Shipping:
+#     def __init__(self):
+#         self.cart=[]
+#     def add_cart(self):
+#         name=input("请输入商品名称")
+#         for product in self.cart:
+#             if product.name==name:
+#                 print("该商品已存在，请勿重复添加")
+#                 return
+#         try:
+#             price=float(input("请输入商品价格"))
+#             count=int(input("请输入商品数量"))
+#             product=Product(name,price,count)
+#             self.cart.append(product)
+#             print("该商品添加成功")
+#             return
+#         except ValueError:
+#             print("请输入正确的值")
+#     def update_cart(self):# 2, 修改购物车
+#         name=input("请输入要修改商品名称")
+#         for pro in self.cart:
+#             if pro.name==name:
+#                 try:
+#                     print(f"该商品的原信息：{pro}")
+#                     price=float(input("请输入新的商品价格"))
+#                     count=int(input("请输入新的商品数量"))
+#                     pro.price=price
+#                     pro.count=count
+#                     print(pro)
+#                     print("商品修改成功")
+#                     return
+#                 except ValueError:
+#                     print("请输入正确的值")
+#         else:
+#             print("该商品无法修改，因为不存在")
+#     def delete_cart(self):    # 3.删除商品信息
+#         name=input("请输入商品信息")
+#         target=next((p for p in self.cart if p.name==name),None)
+#         if target is not None:
+#             self.cart.remove(target)
+#             print("删除成功")
+#         else:
+#             print("不存在该商品，无法删除")
+#     def find_cart(self):  #4,查询购物车
+#         name=input("请输入要查询的商品名称")
+#         for p in self.cart:
+#             if p.name==name:
+#                 print(p)
+#                 return
+#         else:
+#             print("未找到该商品信息")
+#     def show_cart(self): # 展示购物车的全部商品信息
+#         for p in self.cart:
+#             print(p)
+#     def run_cart(self):
+#         while True:
+#             print("*************************************************************************************")
+#             print("1,添加商品信息  2，修改商品信息  3，删除商品信息  4，查询商品信息 5，展示全部商品信息 6，退出程序")
+#             print("**************************************************************************************")
+#             try:
+#                 choice = int(input("请输入你的选择"))
+#                 match choice:
+#                     case 1:
+#                         self.add_cart()
+#                     case 2:
+#                         self.update_cart()
+#                     case 3:
+#                         self.delete_cart()
+#                     case 4:
+#                         self.find_cart()
+#                     case 5:
+#                         self.show_cart()
+#                     case 6:
+#                         break
+#             except ValueError:
+#                 print("请输入正确的数字，1-6")
+# if __name__=="__main__" :
+#     s1=Shipping()
+#     s1.run_cart()
+# 异常捕获  try...except  eg：
+try:
+    print("="*30)
+    # print(a)
+    print(1/0)
+    print("*"*30)  # 一旦在 try 块里发生了错误，Python 会立即停止当前 try 块内后续所有代码的执行。它不会去管后面还有多少行代码，直接跳出 try 块。
+except NameError as e:
+    print("出现异常了，原因是",e)
+except Exception as i :  #  捕获所有的异常
+    print(i)
 
-    def __str__(self):
-        return f"姓名{self.name}||语文：{self.chinese}|数学：{self.math}|英语：{self.english}"
 
 
-class Education:
-    def __init__(self):
-        self.student = []
 
-    def add_student(self):
-        name = input("请输入学生信息")
-        for stu in self.student:
-            if stu.name == name:
-                print("该学生已存在，请勿重复添加")
-                return
-        try:
-            chinese = int(input("请输入学生的语文成绩"))
-            math = int(input("请输入学生的数学成绩"))
-            english = int(input("请输入学生的英语成绩"))
-            if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
-                student = Student(name, chinese, math, english)
-                self.student.append(student)
-                print("该学生成绩添加成功")
-                return
-            else:
-                print("学生成绩请输入0-100之间")
-                return
-        except ValueError:
-            print("请输入正确的数字")
-
-    def update_student(self):  # 修改学生信息
-        name = input("请输入学生姓名")
-        for student in self.student:
-            if student.name == name:
-                try:
-                    print(student)
-                    chinese = int(input("请输入学生新的语文成绩"))
-                    math = int(input("请输入学生新的数学成绩"))
-                    english = int(input("请输入学生新的英语成绩"))
-                    if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 <= english <= 100:
-                        student = Student(name, chinese, math, english)
-                        self.student.append(student)
-                        print(student)
-                        print("该学生成绩添加成功")
-                        return
-                    else:
-                        print("学生成绩请输入0-100之间")
-                        return
-                except ValueError:
-                    print("请输入正确的数字")
-
-        else:
-            print("抱歉，没找到该学生信息")
-
-    def delete_student(self):  # 删除学生信息
-        name = input("请输入学生的姓名")
-        target = next((s for s in self.student if s.name == name), None)
-        self.student.remove(target)
-        print("删除成功")
-
-    def find_student(self):  # 4,查找指定学生的信息
-        name = input("请输入学生的姓名")
-        for student in self.student:
-            if student.name == name:
-                print(student)
-                return
-        print("未找到该学生信息")
-
-    def show_student(self):  # 5,展示学生信息
-        for s in self.student:
-            print(s)
-
-    def run_student(self):  # 用户选择即系统交互界面
-        while True:
-            print("""
-                     >>>>>>>>>>>>>>>>>欢迎来到教育管理系统<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>1，添加学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>2，修改学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>3，删除学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>4，查询学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>5，展示学生信息<<<<<<<<<<<<<<<<<<<<<<<<<
-                     >>>>>>>>>>>>>>>>>6，退出系统    <<<<<<<<<<<<<<<<<<<<<<<<
-                     """)
-            choice = int(input("请输入你的选择"))
-            match choice:
-                case 1:
-                    self.add_student()
-                case 2:
-                    self.update_student()
-                case 3:
-                    self.delete_student()
-                case 4:
-                    self.find_student()
-                case 5:
-                    self.show_student()
-                case 6:
-                    break
-                case _:
-                    print("请输入1-6之间的数字")
-                    break
-if __name__=="__main__":
-    edu=Education()
-    edu.run_student()
-# 记得测试
