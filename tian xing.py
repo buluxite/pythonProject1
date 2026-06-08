@@ -919,15 +919,16 @@
 #     s1=Shipping()
 #     s1.run_cart()
 # 异常捕获  try...except  eg：
-try:
-    print("="*30)
-    # print(a)
-    print(1/0)
-    print("*"*30)  # 一旦在 try 块里发生了错误，Python 会立即停止当前 try 块内后续所有代码的执行。它不会去管后面还有多少行代码，直接跳出 try 块。
-except NameError as e:
-    print("出现异常了，原因是",e)
-except Exception as i :  #  捕获所有的异常
-    print(i)
+# try:
+#     print("="*30)
+#     # print(a)
+#     print(1/0)
+#     print("*"*30)  # 一旦在 try 块里发生了错误，Python 会立即停止当前 try 块内后续所有代码的执行。它不会去管后面还有多少行代码，直接跳出 try 块。
+# except NameError as e:
+#     print("出现异常了，原因是",e)
+# except Exception as i :  #  捕获所有的异常
+#     print(i)
+
 
 
 
